@@ -213,9 +213,16 @@ extension CollectionViewController: UICollectionViewDelegate {
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
     ) {
-        humanList[indexPath.row].isSick = true
-        sickCount += 1
-        self.collectionView.reloadItems(at: [indexPath])
+        if humanList[indexPath.row].isSick != true {
+            humanList[indexPath.row].isSick = true
+            
+            
+            sickCount += 1
+            
+            
+            self.collectionView.reloadItems(at: [indexPath])
+        }
+        
     }
     
 }
